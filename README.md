@@ -1,7 +1,7 @@
 # Codenames Classic: Map Generator
 
 This is a simple web application that generates a map for the game "Codenames". The map consists of a 5x5 grid of cards, which can be blue, red, neutral, or black. The layout of the map is determined by a passcode entered by the user, ensuring the same passcode will always generate the same map. This allows the same map to be used on different devices by spymasters.
-Check it out here: https://samuelabyan.github.io/codenames-map/
+Check it out here: https://github.com/MariaLysik/codenames-map
 
 ## Features
 
