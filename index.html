@@ -73,12 +73,29 @@
             aspect-ratio: 1 / 1;
         }
         .neutral { background-color: burlywood; }
-        .black { 
+        .black1 { 
             background-color: black; 
             position: relative;
         }
-        .black::before {
-            content: '*';
+        .black2 { 
+            background-color: black; 
+            position: relative;
+        }
+        .black2::before {
+            content: '★';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            color: burlywood;
+        }
+        .black3 { 
+            background-color: black; 
+            position: relative;
+        }
+        .black3::before {
+            content: '★★';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -100,7 +117,7 @@
             color: royalblue;
         }
         .red { 
-            background-color: red; 
+            background-color: red;
             position: relative;
         }
         .red::before {
@@ -179,7 +196,7 @@
             let colors = Array(blueCount).fill('blue')
                 .concat(Array(redCount).fill('red'))
                 .concat(Array(neutralCount).fill('neutral'))
-                .concat(Array(blackCount).fill('black'));
+                .concat(['black1', 'black2', 'black3']);
 
             // Shuffle colors array based on seed
             for (let i = colors.length - 1; i > 0; i--) {
