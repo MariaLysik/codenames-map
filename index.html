@@ -79,8 +79,32 @@
             font-weight: bold;
             color: burlywood;
         }
-        .blue { background-color: blue; }
-        .red { background-color: red; }
+        .blue { 
+            background-color: blue; 
+            position: relative;
+        }
+        .blue::before {
+            content: '○';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 5em;
+            color: royalblue;
+        }
+        .red { 
+            background-color: red; 
+            position: relative;
+        }
+        .red::before {
+            content: '◇';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 4em;
+            color: tomato;
+        }
 
         @media (max-width: 600px) {
             #passcode-form input {
