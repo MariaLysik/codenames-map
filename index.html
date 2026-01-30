@@ -78,7 +78,7 @@
             position: relative;
         }
         .black::before {
-            content: '✕';
+            content: '*';
             position: absolute;
             top: 50%;
             left: 50%;
@@ -131,13 +131,6 @@
     <div id="passcode-form">
         <label for="passcode">Enter passcode:</label>
         <input type="text" id="passcode" required>
-        <label for="assassins">Number of assassins:</label>
-        <select id="assassins">
-            <option value="0">0</option>
-            <option value="1" selected>1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-        </select>
         <button onclick="generateMap()">Generate Map</button>
     </div>
     <div id="map"></div>
@@ -147,11 +140,10 @@
             const passcode = document.getElementById('passcode').value;
             if (!passcode) return alert('Please enter a passcode.');
 
-            const assassins = parseInt(document.getElementById('assassins').value);
             const seed = generateSeed(passcode);
             const map = document.getElementById('map');
             map.innerHTML = '';
-            const { colors, blueCount, redCount } = generateColors(seed, assassins);
+            const { colors, blueCount, redCount } = generateColors(seed);
             
             // Set frame color based on which team has more cards
             map.classList.remove('blue-frame', 'red-frame');
@@ -177,9 +169,9 @@
             return Math.abs(seed);
         }
 
-        function generateColors(seed, assassins) {
+        function generateColors(seed) {
             const totalCards = 25;
-            const blackCount = assassins;
+            const blackCount = 3;
             const blueCount = seed % 2 === 0 ? 9 : 8;
             const redCount = seed % 2 === 0 ? 8 : 9;
             const neutralCount = totalCards - blackCount - blueCount - redCount;
