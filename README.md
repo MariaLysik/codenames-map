@@ -8,4 +8,5 @@ Check it out here: https://marialysik.github.io/codenames-map
 - Responsive design for use on both desktop and mobile devices.
 - Generates a 5x5 grid of cards based on a passcode.
 - Ensures the same passcode generates the same map layout.
-- Randomly assigns 7 or 8 blue/red cards.
+- Randomly assigns 8 or 9 blue/red cards.
+- Randomly assigns 3 assassin cards with different difficulty level (none, 1 or 2 stars).
